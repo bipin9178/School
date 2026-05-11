@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/auth';
+const API_URL = 'https://school-backend-4e5u.onrender.com/api/auth';
 
 export const loginUser = createAsyncThunk('auth/login', async ({ email, password }, { rejectWithValue }) => {
   try {
