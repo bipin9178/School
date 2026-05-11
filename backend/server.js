@@ -9,7 +9,7 @@ const app = express();
 
 // Middleware
 app.use(cors({ 
-  origin: 'http://localhost:3000', 
+  origin: 'https://school-d46d.onrender.com', 
   credentials: true 
 }));
 app.use(express.json());
