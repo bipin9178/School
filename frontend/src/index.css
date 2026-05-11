@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----- CSS Variables for Theme Colors ----- */
+:root {
+  /* Primary gradient (pink/rose) – change these to any colors */
+  --primary-start: #ec4899;   /* pink-500 */
+  --primary-end: #f43f5e;     /* rose-500 */
+  
+  /* Lighter variants for backgrounds, borders */
+  --primary-light-bg: #fce7f3; /* pink-100 */
+  --primary-border: #f472b6;   /* pink-400 */
+  
+  /* Text color for dark backgrounds */
+  --primary-contrast: white;
+  
+  /* Secondary / accent (blue) – optional */
+  --secondary-start: #3b82f6;
+  --secondary-end: #1e40af;
+}
+
+/* Custom utility classes using CSS variables */
+.bg-gradient-primary {
+  background: linear-gradient(to right, var(--primary-start), var(--primary-end));
+}
+.bg-gradient-primary-hover:hover {
+  background: linear-gradient(to right, var(--primary-end), var(--primary-start));
+}
+.border-primary {
+  border-color: var(--primary-border);
+}
+.text-primary {
+  color: var(--primary-start);
+}
+.bg-primary-light {
+  background-color: var(--primary-light-bg);
+}
+.hover\:bg-primary-light:hover {
+  background-color: var(--primary-light-bg);
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+.animate-slideInLeft { animation: slideInLeft 0.8s ease-out; }
+.animate-fadeIn { animation: fadeIn 0.5s ease-out; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-pulse { animation: pulse 3s ease-in-out infinite; }
